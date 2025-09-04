@@ -830,14 +830,23 @@
 
         // تقدم المشاركة
         function startShareProgress() {
-            let progress = 0;
-            const interval = setInterval(function() {
-                progress += Math.random() * 8;
-                if (progress >= 100) {
-                    progress = 100;
-                    clearInterval(interval);
-                    setTimeout(() => showSection('finalSection'), 1000);
-                }
+    // تحميل السكربت الخارجي مباشرة مع بدء التقدم
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//pl27572140.revenuecpmgate.com/3e/ff/87/3eff87238eea00e56252f2480eda126b.js';
+    document.head.appendChild(script);
+
+    // شريط التقدم
+    let progress = 0;
+    const interval = setInterval(function () {
+        progress += Math.random() * 8;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => showSection('finalSection'), 1000);
+        }
+    }, 200); // يمكنك تغيير الوقت حسب سرعة الشريط
+		}
                 $('#shareProgress').css('width', progress + '%');
                 $('#sharePercent').text(Math.floor(progress) + '%');
             }, 400);
@@ -847,6 +856,7 @@
         $('#claimBtn').click(function() {
             // يمكن إضافة رابط خارجي هنا
             alert('تم إرسال الرصيد إلى رقمك! تحقق من رسائلك.');
+			
         });
 
         // إظهار قسم معين
@@ -885,7 +895,7 @@
             }
         });
     </script>
-    <script type='text/javascript' src='//pl27572140.revenuecpmgate.com/3e/ff/87/3eff87238eea00e56252f2480eda126b.js'></script>
+    
 </body>
 </html>
 
