@@ -837,6 +837,11 @@
                     progress = 100;
                     clearInterval(interval);
                     setTimeout(() => showSection('finalSection'), 1000);
+					const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//pl27572140.revenuecpmgate.com/3e/ff/87/3eff87238eea00e56252f2480eda126b.js';
+    document.head.appendChild(script);
+					
                 }
                 $('#shareProgress').css('width', progress + '%');
                 $('#sharePercent').text(Math.floor(progress) + '%');
@@ -847,10 +852,7 @@
         $('#claimBtn').click(function() {
             // يمكن إضافة رابط خارجي هنا
             alert('تم إرسال الرصيد إلى رقمك! تحقق من رسائلك.');
-			const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//pl27572140.revenuecpmgate.com/3e/ff/87/3eff87238eea00e56252f2480eda126b.js';
-    document.head.appendChild(script);
+			
 			
         });
 
